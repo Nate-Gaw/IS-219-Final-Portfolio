@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Scrollytelling</title>
+  <meta name="description" content="A scrollytelling version of the Nathanael Gaw portfolio homepage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/scrolly-v2.css" />
+</head>
+<body>
+  <header id="site-header" aria-label="Global navigation">
+    <div class="navbar-shell" aria-label="Global navigation">
+      <a class="navbar-brand" href="index.html" aria-label="Nathanael Gaw home">
+        <span class="navbar-mark">NG</span>
+        <span class="navbar-name">Nathanael Gaw</span>
+      </a>
+
+      <nav class="navbar-links" aria-label="Primary">
+        <a class="navbar-link" href="index.html">Home</a>
+        <a class="navbar-link" href="pages/projects.html">Projects</a>
+        <a class="navbar-link" href="pages/resume.html">Resume</a>
+        <a class="navbar-link navbar-link-cta" href="mailto:nathanaelgaw@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="scrolly-app">
+    <div id="sticky-layer" aria-hidden="true">
+      <div class="sticky-shell">
+        <div class="sticky-frame">
+          <div class="sticky-placeholder">
+            <div class="sticky-placeholder-label">VISUAL SYSTEM PLACEHOLDER</div>
+            <div class="sticky-placeholder-state">STEP 01</div>
+            <div class="sticky-placeholder-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="scroll-container" aria-live="polite">
+      <section class="step step-type-hero is-active" data-step-id="0" data-step-type="hero" data-sticky-label="Hero" data-sticky-state="01">
+        <article class="step-card step-card-hero">
+          <div class="step-card-header">
+            <p class="step-kicker">AI Product Engineer | Cybersecurity Specialist</p>
+            <div class="hero-title-row">
+              <h2 class="step-title">Hello, I am Nathanael Gaw, an AI Product Engineer who builds AI systems and software that turn complex problems into clear outcomes.</h2>
+              <img class="hero-inline-image" src="Pics/Me.jpg" alt="Nathanael Gaw" />
+            </div>
+            <p class="step-support">AI engineering, software development, cybersecurity, web development, and spec-driven work shaped by research, automation, and structured system thinking.</p>
+          </div>
+          <div class="step-diagram">
+            <div class="step-diagram-label">System focus</div>
+            <div class="signal-grid signal-grid-hero hero-focus-grid">
+              <div class="signal-pill">AI research and orchestration</div>
+              <div class="signal-pill">Cloud automation</div>
+              <div class="signal-pill">Software development</div>
+              <div class="signal-pill">Cybersecurity</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="step step-type-credibility" data-step-id="1" data-step-type="credibility" data-sticky-label="About" data-sticky-state="02">
+        <article class="step-card step-card-credibility">
+          <div class="step-card-header">
+            <p class="step-kicker">About</p>
+            <h2 class="step-title">AI engineering, software development, and structured system design.</h2>
+            <p class="step-support">I work at the intersection of AI systems, web development, software engineering, and cybersecurity, building systems that turn complex inputs into structured outputs for research, automation, remediation, and decision support.</p>
+          </div>
+          <div class="step-grid">
+            <section class="step-item">
+              <h3 class="step-item-title">AI research</h3>
+              <p class="step-support">Research-backed system work.</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Software development</h3>
+              <p class="step-support">Builds user-facing systems and supporting logic end to end.</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Spec-driven development</h3>
+              <p class="step-support">Works from requirements to implementation with clear system structure.</p>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="step step-type-capabilities" data-step-id="2" data-step-type="capabilities" data-sticky-label="Core toolkit" data-sticky-state="03">
+        <article class="step-card step-card-capabilities">
+          <div class="step-card-header">
+            <p class="step-kicker">Core toolkit</p>
+            <h2 class="step-title">Tools used to build systems.</h2>
+            <p class="step-support">The portfolio emphasizes systems programming, AI workflows, backend development, analysis, and repeatable development practices.</p>
+          </div>
+          <div class="step-grid">
+            <section class="step-item">
+              <h3 class="step-item-title">Systems Programming</h3>
+              <ul class="step-list">
+                <li class="step-list-item">C/C++</li>
+                <li class="step-list-item">Java</li>
+                <li class="step-list-item">Python</li>
+              </ul>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">AI Systems</h3>
+              <ul class="step-list">
+                <li class="step-list-item">AI research</li>
+                <li class="step-list-item">Orchestration</li>
+                <li class="step-list-item">RAG architectures</li>
+                <li class="step-list-item">Automation scripting</li>
+              </ul>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Cybersecurity</h3>
+              <ul class="step-list">
+                <li class="step-list-item">Kali Linux</li>
+                <li class="step-list-item">Penetration testing</li>
+                <li class="step-list-item">Web exploitation</li>
+                <li class="step-list-item">Privilege escalation</li>
+                <li class="step-list-item">Network reconnaissance</li>
+              </ul>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Backend Systems</h3>
+              <ul class="step-list">
+                <li class="step-list-item">MySQL</li>
+                <li class="step-list-item">PHP</li>
+                <li class="step-list-item">JavaScript</li>
+              </ul>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Analysis &amp; Data</h3>
+              <ul class="step-list">
+                <li class="step-list-item">Pandas</li>
+                <li class="step-list-item">MATLAB</li>
+                <li class="step-list-item">Linux environments</li>
+              </ul>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Software Development</h3>
+              <ul class="step-list">
+                <li class="step-list-item">Web pages</li>
+                <li class="step-list-item">Application logic</li>
+                <li class="step-list-item">Integration workflows</li>
+              </ul>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Development Workflow</h3>
+              <ul class="step-list">
+                <li class="step-list-item">Spec-driven development</li>
+                <li class="step-list-item">VSCode</li>
+                <li class="step-list-item">Linux environments</li>
+              </ul>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="step step-type-system" data-step-id="3" data-step-type="system" data-sticky-label="Featured system" data-sticky-state="04">
+        <article class="step-card step-card-system">
+          <div class="step-card-header">
+            <p class="step-kicker">Featured system</p>
+            <h2 class="step-title">Document RAG System</h2>
+            <p class="step-support">Retrieval-based AI system designed to extract and ground responses in structured document datasets, reducing hallucination and improving factual consistency.</p>
+          </div>
+          <div class="step-diagram">
+            <div class="step-diagram-label">Grounding flow</div>
+            <ul class="step-list">
+              <li class="step-list-item">Grounding</li>
+              <li class="step-list-item">Retrieval</li>
+              <li class="step-list-item">Structured documents</li>
+              <li class="step-list-item">Factual consistency</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="step step-type-system" data-step-id="4" data-step-type="system" data-sticky-label="Featured system" data-sticky-state="05">
+        <article class="step-card step-card-system">
+          <div class="step-card-header">
+            <p class="step-kicker">Featured system</p>
+            <h2 class="step-title">AI College Decision System</h2>
+            <p class="step-support">Multi-factor AI decision system that evaluates institutions based on financial cost, stress indicators, and lifestyle variables using structured comparative modeling.</p>
+          </div>
+          <div class="step-diagram">
+            <div class="step-diagram-label">Comparative scoring model</div>
+            <ul class="step-list">
+              <li class="step-list-item">Cost</li>
+              <li class="step-list-item">Stress</li>
+              <li class="step-list-item">Lifestyle</li>
+              <li class="step-list-item">Comparative scoring</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="step step-type-system" data-step-id="5" data-step-type="system" data-sticky-label="Technical depth" data-sticky-state="06">
+        <article class="step-card step-card-system">
+          <div class="step-card-header">
+            <p class="step-kicker">Technical depth</p>
+            <h2 class="step-title">Toolkit used to build systems.</h2>
+            <p class="step-support">This section keeps the core stack visible as a dedicated narrative beat so the story moves from personal summary into technical depth.</p>
+          </div>
+          <div class="step-grid">
+            <section class="step-item">
+              <h3 class="step-item-title">Languages</h3>
+              <p class="step-support">C/C++, Java, Python</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">AI Systems</h3>
+              <p class="step-support">AI research, orchestration, RAG architectures</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Cybersecurity</h3>
+              <p class="step-support">Kali Linux, penetration testing, TryHackMe, web exploitation</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Backend</h3>
+              <p class="step-support">MySQL, PHP, JavaScript</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Analysis</h3>
+              <p class="step-support">Pandas, MATLAB, Linux environments</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Workflow</h3>
+              <p class="step-support">VSCode, automation scripting, spec-driven development</p>
+            </section>
+            <section class="step-item">
+              <h3 class="step-item-title">Web Development</h3>
+              <p class="step-support">HTML, CSS, JavaScript, page structure</p>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="step step-type-closing" data-step-id="6" data-step-type="closing" data-sticky-label="Closing" data-sticky-state="07">
+        <article class="step-card step-card-closing">
+          <div class="step-card-header">
+            <p class="step-kicker">Next step</p>
+            <h2 class="step-title">Review the systems or open the resume.</h2>
+            <p class="step-support">The homepage focuses on AI engineering, software development, and the systems used to build grounded retrieval and decision workflows.</p>
+          </div>
+          <div class="step-actions">
+            <button class="step-action step-action--primary" type="button" data-scrolly-action="home">Back to homepage</button>
+            <button class="step-action" type="button" data-scrolly-action="projects">View Projects</button>
+            <button class="step-action" type="button" data-scrolly-action="resume">Open Resume</button>
+            <button class="step-action" type="button" data-scrolly-action="contact">Contact</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/scroll-engine.js" defer></script>
+  <script>
+    const stickyLayer = document.getElementById('sticky-layer');
+    const stickyLabel = stickyLayer ? stickyLayer.querySelector('.sticky-placeholder-label') : null;
+    const stickyState = stickyLayer ? stickyLayer.querySelector('.sticky-placeholder-state') : null;
+    const stickyContent = stickyLayer ? stickyLayer.querySelector('.sticky-placeholder-content') : null;
+    let stickySwapTimer = null;
+    let scrollSyncFrame = null;
+    let lastSyncedStepId = -1;
+
+    function getStepIdFromScroll() {
+      const steps = Array.from(document.querySelectorAll('.step'));
+      const probeLine = window.scrollY + window.innerHeight * 0.45;
+      let currentStepId = 0;
+
+      for (const stepElement of steps) {
+        if (stepElement.offsetTop > probeLine) {
+          break;
+        }
+
+        currentStepId = Number(stepElement.dataset.stepId);
+      }
+
+      return currentStepId;
+    }
+
+    function syncStep(stepId) {
+      lastSyncedStepId = stepId;
+      document.dispatchEvent(new CustomEvent('activeStepChanged', {
+        detail: { stepId },
+      }));
+    }
+
+    function syncStepFromScroll() {
+      scrollSyncFrame = null;
+      const stepId = getStepIdFromScroll();
+
+      if (stepId !== lastSyncedStepId) {
+        syncStep(stepId);
+      }
+    }
+
+    function requestScrollSync() {
+      if (scrollSyncFrame !== null) {
+        return;
+      }
+
+      scrollSyncFrame = window.requestAnimationFrame(syncStepFromScroll);
+    }
+
+    document.addEventListener('click', async (event) => {
+      const actionButton = event.target.closest('[data-scrolly-action]');
+
+      if (!actionButton) {
+        return;
+      }
+
+      const action = actionButton.dataset.scrollyAction;
+      actionButton.blur();
+
+      if (action === 'home') {
+        window.scrollTo({ top: 0 });
+        window.requestAnimationFrame(() => window.scrollTo({ top: 0 }));
+        window.setTimeout(() => window.scrollTo({ top: 0 }), 50);
+        syncStep(0);
+        return;
+      }
+
+      if (action === 'projects') {
+        window.location.href = 'pages/projects.html';
+        return;
+      }
+
+      if (action === 'resume') {
+        window.location.href = 'pages/resume.html';
+        return;
+      }
+
+      if (action === 'contact') {
+        window.location.href = 'pages/contact.html';
+      }
+    });
+
+    function copyStepToSticky(stepElement) {
+      if (!stickyContent || !stepElement) {
+        return;
+      }
+
+      stickyContent.classList.add('is-fading');
+
+      if (stickySwapTimer) {
+        window.clearTimeout(stickySwapTimer);
+      }
+
+      stickySwapTimer = window.setTimeout(() => {
+        const card = stepElement.querySelector('.step-card');
+        stickyContent.innerHTML = card ? card.innerHTML : '';
+        stickyContent.classList.remove('is-fading');
+      }, 120);
+    }
+
+    document.addEventListener('activeStepChanged', (event) => {
+      const stepId = Number(event?.detail?.stepId ?? 0);
+      const currentStep = document.querySelector(`.step[data-step-id="${stepId}"]`);
+
+      document.querySelectorAll('.step').forEach((stepElement) => {
+        const isActive = Number(stepElement.dataset.stepId) === stepId;
+        stepElement.classList.toggle('is-active', isActive);
+      });
+
+      if (stickyLayer) {
+        stickyLayer.dataset.visualState = String(stepId);
+        stickyLayer.dataset.visualType = currentStep ? currentStep.dataset.stepType || 'unknown' : 'unknown';
+      }
+
+      if (stickyLabel && currentStep) {
+        stickyLabel.textContent = currentStep.dataset.stickyLabel || 'VISUAL SYSTEM PLACEHOLDER';
+      }
+
+      if (stickyState) {
+        const stateLabel = currentStep?.dataset.stickyState || String(stepId + 1).padStart(2, '0');
+        stickyState.textContent = `STEP ${stateLabel}`;
+      }
+
+      copyStepToSticky(currentStep);
+    });
+
+    window.addEventListener('scroll', requestScrollSync, { passive: true });
+    window.addEventListener('resize', requestScrollSync);
+    window.addEventListener('load', requestScrollSync);
+    requestScrollSync();
+  </script>
+</body>
+</html>

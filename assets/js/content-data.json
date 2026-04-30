@@ -1,0 +1,95 @@
+{
+  "steps": [
+    {
+      "id": 0,
+      "type": "hero",
+      "title": "Nathanael Gaw",
+      "subtitle": "AI Product Engineer",
+      "support": "AI engineering, software development, web development, and spec-driven work shaped by research, automation, and structured system thinking."
+    },
+    {
+      "id": 1,
+      "type": "credibility",
+      "title": "Federal Aviation Administration",
+      "subtitle": "High-reliability systems exposure",
+      "items": [
+        {
+          "title": "AI Research Intern — NextGen AI Operations",
+          "details": [
+            "AI applications for air traffic management systems within En Route Automation Modernization",
+            "Applied machine learning research in operational aviation environments",
+            "System-level analysis of real-world data pipelines and sensor-based measurements",
+            "Crowd Favorite award at a technical competition"
+          ]
+        },
+        {
+          "title": "Cloud Systems Research Intern — NextGen Technology",
+          "details": [
+            "Automation scripts for data processing pipelines, reducing manual workflows by 75%",
+            "Cloud-based simulation system development projected to reduce operational costs by $200K+",
+            "Cross-department systems work across enterprise architecture"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "capabilities",
+      "title": "Core Technical Stack",
+      "subtitle": "Toolkit used to build systems",
+      "items": [
+        {
+          "title": "Systems Programming",
+          "details": ["C/C++", "Java", "Python"]
+        },
+        {
+          "title": "AI Systems",
+          "details": ["Data pipelines", "Orchestration", "RAG architectures", "Automation scripting"]
+        },
+        {
+          "title": "Backend Systems",
+          "details": ["MySQL", "PHP", "JavaScript"]
+        },
+        {
+          "title": "Analysis & Data",
+          "details": ["Pandas", "MATLAB", "Linux environments"]
+        },
+        {
+          "title": "Development Workflow",
+          "details": ["VSCode", "Spec-driven development", "System-first implementation"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "system",
+      "title": "RAG Academic Advisor",
+      "subtitle": "Retrieval pipeline for grounded answers",
+      "description": "Retrieval-based academic assistant designed to ground responses in structured source documents, reduce hallucination, and keep outputs consistent with the underlying material.",
+      "diagram": "Retrieval Pipeline"
+    },
+    {
+      "id": 4,
+      "type": "system",
+      "title": "Document RAG System",
+      "subtitle": "Structured document grounding",
+      "description": "Retrieval-based AI system designed to extract and ground responses in structured document datasets, reducing hallucination and improving factual consistency.",
+      "diagram": "Document Grounding Flow"
+    },
+    {
+      "id": 5,
+      "type": "system",
+      "title": "AI College Decision System",
+      "subtitle": "Multi-factor decision modeling",
+      "description": "AI decision system that evaluates institutions using financial cost, stress indicators, and lifestyle variables through structured comparative modeling.",
+      "diagram": "Comparative Scoring Model"
+    },
+    {
+      "id": 6,
+      "type": "closing",
+      "title": "AI Product Engineer",
+      "subtitle": "Systems-first builder",
+      "support": "This person builds systems, not apps. The portfolio is grounded in real engineering experience, grounded retrieval, decision modeling, and applied software development."
+    }
+  ]
+}

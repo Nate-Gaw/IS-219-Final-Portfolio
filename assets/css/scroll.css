@@ -1,0 +1,108 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #070b12 0%, #0b0f17 100%);
+  color: #f9fafb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#scrolly-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#sticky-visual {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+.sticky-visual-frame {
+  width: min(72rem, calc(100vw - 2rem));
+  height: min(40rem, calc(100vh - 2rem));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  background: rgba(17, 24, 39, 0.92);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.visual-placeholder {
+  width: min(28rem, 80%);
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: #9ca3af;
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+#scroll-sections {
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.step-placeholder {
+  width: min(24rem, 80vw);
+  height: 10rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.step.is-active .step-placeholder {
+  border-color: rgba(79, 70, 229, 0.32);
+  background: rgba(79, 70, 229, 0.1);
+}
+
+#sticky-visual[data-visual-state="0"] .visual-placeholder,
+#sticky-visual[data-visual-state="1"] .visual-placeholder,
+#sticky-visual[data-visual-state="2"] .visual-placeholder,
+#sticky-visual[data-visual-state="3"] .visual-placeholder,
+#sticky-visual[data-visual-state="4"] .visual-placeholder {
+  color: #f9fafb;
+}
+
+@media (max-width: 640px) {
+  #sticky-visual {
+    padding: 1rem;
+  }
+
+  .sticky-visual-frame {
+    width: calc(100vw - 1rem);
+    height: calc(100vh - 1rem);
+    border-radius: 1.5rem;
+  }
+
+  .step {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,432 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: linear-gradient(180deg, #070b12 0%, #0b0f17 100%);
+  color: #f9fafb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  padding: 1rem 0 0;
+}
+
+#site-header .navbar-shell {
+  position: static;
+}
+
+#scrolly-app {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 6.75rem;
+}
+
+#sticky-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.sticky-shell {
+  width: min(88rem, 100%);
+  height: calc(100vh - 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky-frame {
+  width: min(72rem, 100%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.sticky-placeholder {
+  width: min(48rem, 92%);
+  min-height: 15rem;
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
+  gap: 0.75rem;
+  text-align: center;
+  border: 0;
+  border-radius: 1.5rem;
+  background: transparent;
+}
+
+.sticky-placeholder-label,
+.sticky-placeholder-state {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sticky-placeholder-label {
+  color: #f9fafb;
+  font-size: 0.8rem;
+}
+
+.sticky-placeholder-state {
+  color: #9ca3af;
+  font-size: 0.72rem;
+}
+
+.sticky-placeholder-content {
+  width: 100%;
+  max-width: 64rem;
+  display: grid;
+  gap: 0.8rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.sticky-placeholder-content.is-fading {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.sticky-placeholder-content .step-card {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sticky-placeholder-content .step-card-header {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+.sticky-placeholder-content .step-kicker,
+.sticky-placeholder-content .step-support,
+.sticky-placeholder-content .step-title,
+.sticky-placeholder-content .step-diagram-label,
+.sticky-placeholder-content .step-item-title,
+.sticky-placeholder-content .step-list {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-placeholder-content .step-grid {
+  margin-top: 1.4rem;
+}
+
+.sticky-placeholder-content .hero-title-row {
+  position: relative;
+  width: 100%;
+  min-height: clamp(10rem, 20vw, 18rem);
+  padding-right: calc(clamp(8rem, 18vw, 18rem) + 1.5rem);
+  display: flex;
+  align-items: center;
+}
+
+.sticky-placeholder-content .hero-inline-image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(8rem, 18vw, 18rem);
+  height: auto;
+}
+
+.sticky-placeholder-content .step-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.hero-title-row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) clamp(8rem, 18vw, 18rem);
+  gap: clamp(1rem, 2vw, 1.75rem);
+  align-items: center;
+}
+
+.step-type-hero .step-card-header {
+  width: 100%;
+  max-width: 100%;
+}
+
+.step-type-hero .step-title {
+  max-width: clamp(20rem, 56vw, 78rem);
+  font-size: clamp(2rem, 2.6vw + 1rem, 4.75rem);
+  line-height: 0.97;
+}
+
+@media (min-width: 1200px) {
+  .hero-title-row {
+    grid-template-columns: minmax(0, 1fr) clamp(7rem, 12vw, 12rem);
+  }
+
+  .step-type-hero .step-title {
+    text-wrap: balance;
+  }
+
+  .sticky-placeholder-content .hero-title-row {
+    min-height: clamp(10rem, 18vw, 16rem);
+    padding-right: calc(clamp(7rem, 12vw, 12rem) + 1.5rem);
+  }
+
+  .sticky-placeholder-content .hero-inline-image {
+    width: clamp(7rem, 12vw, 12rem);
+  }
+}
+
+.hero-inline-image {
+  width: clamp(8rem, 18vw, 18rem);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
+  flex: 0 0 auto;
+  justify-self: end;
+  align-self: center;
+}
+
+#scroll-container {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.step {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.step-card {
+  width: min(72rem, 100%);
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  background: rgba(17, 24, 39, 0.9);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.step-card-header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 52rem;
+}
+
+.step-kicker {
+  margin: 0;
+  color: #4f46e5;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.step-title {
+  margin: 0;
+  color: #f9fafb;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.step-support {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 52rem;
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.step-item {
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.step-item-title {
+  margin: 0 0 0.75rem;
+  color: #f9fafb;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.step-list {
+  margin: 0;
+  padding-left: 1rem;
+  color: #cbd5e1;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.step-list-item {
+  line-height: 1.5;
+}
+
+.step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.step-action {
+  appearance: none;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f9fafb;
+  cursor: pointer;
+  padding: 0.78rem 1rem;
+  font: inherit;
+  line-height: 1;
+}
+
+.step-action--primary {
+  background: linear-gradient(135deg, rgba(39, 214, 230, 0.2), rgba(56, 189, 248, 0.16));
+  border-color: rgba(103, 232, 249, 0.48);
+}
+
+.step-action:focus-visible {
+  outline: 2px solid rgba(103, 232, 249, 0.55);
+  outline-offset: 2px;
+}
+
+.step-diagram {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.step-diagram-label {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.step-type-hero .step-card {
+  border-color: rgba(79, 70, 229, 0.24);
+}
+
+.step-type-credibility .step-card {
+  border-color: rgba(34, 197, 94, 0.16);
+}
+
+.step-type-capabilities .step-card {
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+.step-type-system .step-card {
+  border-color: rgba(59, 130, 246, 0.18);
+}
+
+.step-type-closing .step-card {
+  border-color: rgba(249, 115, 22, 0.18);
+}
+
+.step.is-active .step-card {
+  outline: 0;
+}
+
+.step.is-active,
+.step:not(.is-active) {
+  opacity: 0;
+}
+
+.sticky-placeholder-content,
+.sticky-placeholder-content * {
+  pointer-events: auto;
+}
+
+#sticky-layer[data-visual-state="0"] .sticky-placeholder,
+#sticky-layer[data-visual-state="1"] .sticky-placeholder,
+#sticky-layer[data-visual-state="2"] .sticky-placeholder,
+#sticky-layer[data-visual-state="3"] .sticky-placeholder,
+#sticky-layer[data-visual-state="4"] .sticky-placeholder,
+#sticky-layer[data-visual-state="5"] .sticky-placeholder,
+#sticky-layer[data-visual-state="6"] .sticky-placeholder {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 960px) {
+  .step-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  #scrolly-app {
+    padding-top: 8.75rem;
+  }
+
+  #sticky-layer {
+    padding: 0.5rem;
+  }
+
+  .sticky-shell {
+    height: calc(100vh - 1rem);
+  }
+
+  .sticky-frame {
+    border-radius: 1.5rem;
+  }
+
+  .step {
+    padding: 0.75rem;
+  }
+
+  .step-card {
+    border-radius: 1.5rem;
+  }
+
+  .sticky-placeholder {
+    width: min(100%, 92%);
+  }
+
+  .hero-title-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-inline-image {
+    width: min(100%, 16rem);
+    justify-self: start;
+  }
+}
