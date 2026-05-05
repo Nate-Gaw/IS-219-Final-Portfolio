@@ -8,11 +8,305 @@
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/main.js" defer></script>
+  <style>
+    .projects-page {
+      width: min(100%, 76rem);
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+
+    .projects-hero {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: clamp(1.5rem, 3vw, 2rem);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at top left, rgba(79, 70, 229, 0.18), transparent 38%),
+        linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.92));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .projects-eyebrow {
+      margin: 0;
+      color: var(--accent-primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .projects-title {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      text-wrap: balance;
+    }
+
+    .projects-summary {
+      margin: 0;
+      max-width: 58ch;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      display: grid;
+      gap: 1rem;
+      padding: clamp(1.25rem, 2vw, 1.75rem);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.92));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-card-head {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .project-kicker {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+      overflow-wrap: anywhere;
+    }
+
+    .project-embed {
+      position: relative;
+      overflow: hidden;
+      min-height: 22rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.25rem;
+      background:
+        linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(255, 255, 255, 0.03)),
+        rgba(8, 12, 20, 0.92);
+    }
+
+    .project-embed-static {
+      display: grid;
+      align-content: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      min-height: 22rem;
+    }
+
+    .project-embed-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid rgba(79, 70, 229, 0.42);
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.12);
+      color: var(--text-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .project-embed-summary {
+      margin: 0;
+      max-width: 42ch;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .project-embed-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-meta-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2rem;
+      padding: 0 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    .project-embed iframe {
+      display: block;
+      width: 100%;
+      height: 28rem;
+      border: 0;
+      background: #0b1020;
+    }
+
+    .project-embed-fallback {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1rem 1.1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+    }
+
+    .project-embed-fallback strong {
+      color: var(--text-primary);
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      padding: 0 1rem;
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(79, 70, 229, 0.28), rgba(79, 70, 229, 0.12));
+      color: var(--text-primary);
+      font-weight: 700;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .project-link:hover,
+    .project-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(129, 140, 248, 0.9);
+      background: linear-gradient(180deg, rgba(79, 70, 229, 0.38), rgba(79, 70, 229, 0.18));
+    }
+
+    @media (max-width: 720px) {
+      .projects-page {
+        width: min(100%, calc(100% - 1rem));
+        padding-top: 1rem;
+      }
+
+      .project-embed iframe {
+        height: 22rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-shell">
     <header id="site-header"></header>
-    <main></main>
+    <main class="projects-page">
+      <section class="projects-hero" aria-labelledby="projects-title">
+        <p class="projects-eyebrow">Projects</p>
+        <h1 class="projects-title" id="projects-title">Embedded previews for selected portfolio work.</h1>
+      </section>
+
+      <section class="projects-grid" id="projects-grid" aria-label="Project previews"></section>
+    </main>
   </div>
+
+  <script>
+    const projects = [
+      {
+        title: 'RAG AI Document Assistant',
+        link: 'https://github.com/Nate-Gaw/RAG-AI-Document-Assistant',
+        host: 'GitHub',
+        summary: 'Repository preview unavailable inside an iframe because GitHub blocks framing.',
+        canEmbed: false,
+      },
+      {
+        title: 'Financial AI College Advisor',
+        link: 'https://github.com/Nate-Gaw/student-reality-lab-GAW',
+        host: 'GitHub',
+        summary: 'Repository preview unavailable inside an iframe because GitHub blocks framing.',
+        canEmbed: false,
+      },
+      {
+        title: 'Global Meeting Scheduler',
+        link: 'https://docs.google.com/document/d/1kGbZZFz4VE2R_aPC6kVfHnCNG8sbS2dhqFxc7UBOztg/edit?tab=t.0',
+        host: 'Google Docs',
+        summary: 'Live document preview rendered from the published source link.',
+        canEmbed: true,
+      },
+      {
+        title: 'Car Rental Program',
+        link: 'https://docs.google.com/document/d/1lgIb201Cit4beeNo7YfMqAwVwzVpTifcP9H8F8Xe2sk/edit?usp=sharing',
+        host: 'Google Docs',
+        summary: 'Live document preview rendered from the published source link.',
+        canEmbed: true,
+      },
+      {
+        title: 'Weather Map Analyzer',
+        link: 'https://tinyurl.com/2p87hsk4',
+        host: 'Google Docs',
+        summary: 'Live document preview rendered from the published source link.',
+        canEmbed: true,
+      },
+    ];
+
+    const projectsGrid = document.querySelector('#projects-grid');
+
+    if (projectsGrid) {
+      projectsGrid.innerHTML = projects
+        .map(
+          (project) => `
+            <article class="project-card">
+              <header class="project-card-head">
+                <p class="project-kicker">Project preview</p>
+                <h2 class="project-title">${project.title}</h2>
+              </header>
+
+              <div class="project-embed">
+                ${project.canEmbed ? `
+                  <iframe
+                    title="${project.title} preview"
+                    src="${project.link}"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                  ></iframe>
+                  <div class="project-embed-fallback">
+                    <strong>Preview fallback</strong>
+                    <span>If the host blocks embedding, use the direct project link below.</span>
+                  </div>
+                ` : `
+                  <div class="project-embed-static">
+                    <span class="project-embed-badge">${project.host} preview blocked</span>
+                    <p class="project-embed-summary">${project.summary}</p>
+                    <div class="project-embed-meta">
+                      <span class="project-meta-chip">Direct link available</span>
+                      <span class="project-meta-chip">Same component layout</span>
+                    </div>
+                  </div>
+                `}
+              </div>
+
+              <div class="project-actions">
+                <a class="project-link" href="${project.link}" target="_blank" rel="noreferrer noopener">
+                  Open Project
+                </a>
+              </div>
+            </article>
+          `,
+        )
+        .join('');
+    }
+  </script>
 </body>
 </html>

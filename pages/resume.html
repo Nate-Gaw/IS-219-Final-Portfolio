@@ -8,11 +8,153 @@
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <script src="../assets/js/main.js" defer></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resume-container {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      width: min(100%, 78rem);
+      margin: 0 auto;
+      padding: 1rem 0 1.5rem;
+      box-sizing: border-box;
+      gap: 1rem;
+    }
+
+    .resume-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.92));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .resume-header h1 {
+      margin: 0;
+      color: var(--text-primary);
+      font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .resume-header p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .resume-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-height: 2.85rem;
+      padding: 0 1rem;
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(79, 70, 229, 0.28), rgba(79, 70, 229, 0.12));
+      color: var(--text-primary);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .resume-download:hover,
+    .resume-download:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(129, 140, 248, 0.9);
+      background: linear-gradient(180deg, rgba(79, 70, 229, 0.38), rgba(79, 70, 229, 0.18));
+    }
+
+    .resume-download-icon {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .resume-viewer {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .resume-viewer iframe {
+      flex: 1;
+      width: 100%;
+      max-width: 72rem;
+      height: 100%;
+      margin-inline: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      background: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 720px) {
+      .resume-container {
+        width: min(100%, calc(100% - 1rem));
+        padding-top: 0.75rem;
+      }
+
+      .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .resume-viewer iframe {
+        min-height: 75vh;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-shell">
     <header id="site-header"></header>
-    <main></main>
+    <main class="resume-container" aria-label="Resume viewer">
+      <div class="resume-header">
+        <div>
+          <h1>Resume</h1>
+          <p>Full-length PDF viewer</p>
+        </div>
+        <a class="resume-download" href="../files/GAW_NATHANAEL_RESUME.pdf" download="GAW_NATHANAEL_RESUME.pdf">
+          <span class="resume-download-icon" aria-hidden="true">↓</span>
+          <span>GAW_NATHANAEL_RESUME.pdf</span>
+        </a>
+      </div>
+
+      <div class="resume-viewer">
+        <iframe
+          id="resume-frame"
+          src="../files/GAW_NATHANAEL_RESUME.pdf"
+          title="Nathanael Gaw resume"
+          loading="eager"
+        ></iframe>
+      </div>
+    </main>
   </div>
+
 </body>
 </html>
