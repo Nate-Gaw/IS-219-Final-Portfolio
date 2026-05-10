@@ -21,11 +21,9 @@ Then open:
 http://localhost:8000/
 ```
 
-### Option 2: VS Code Live Server
+### Option 2: Visit the live Github Pages Site
+https://nate-gaw.github.io/IS-219-Final-Portfolio/index.html
 
-1. Open the project folder in VS Code.
-2. Install the Live Server extension if you do not already have it.
-3. Right-click `index.html` and choose **Open with Live Server**.
 
 ## Project Structure
 
